@@ -1,0 +1,26 @@
+name: Afficher les variables GitHub
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  afficher-variables:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Configurer le dépôt
+      uses: actions/checkout@v2
+
+    - name: Afficher les variables GitHub
+      run: |
+        echo "Répertoire de travail actuel : ${{ github.workspace }}"
+        echo "Nom de l'utilisateur/de l'organisation : ${{ github.repository_owner }}"
+        echo "Nom du dépôt : ${{ github.repository }}"
+        echo "Numéro du run : ${{ github.run_number }}"
+        echo "Numéro du workflow : ${{ github.run_id }}"
+        echo "SHA du commit : ${{ github.sha }}"
+        echo "Événement déclencheur : ${{ github.event_name }}"
+        echo "Acteur (utilisateur qui a initié l'événement) : ${{ github.actor }}"
+        echo "Ref du branche ou du tag : ${{ github.ref }}"
