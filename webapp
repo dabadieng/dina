@@ -1,0 +1,31 @@
+Création de la webapp
+search > app services
+select > create > web app
+onglet basic > subs, rg, name, code, runtime, linux, region > review + create
+> go to ressource
+
+# Visualiser les slot
+overview > domaine > lien "PRODUCTION"
+> deployment slot > add slot > name, clone setting from (rien), add
+> deployment slot > visualiser l'url de la staging elles sont différentes
+
+# configuration de la eeb app
+> aller dans la staging > deployment center > settings (vérifier le stagign)
+> aller dans source > select External git > repo field : url, branche : master > save
+
+# dans la staging
+> overview > default domaine > visualiser app
+
+# swapper de slot
+> deployment slot > swap > settings (source, target) > start swap
+> ovreview web app > domaine prod > == contenu staging
+
+# configuration de l'autoscaling
+> aller sur la webapp (prod) > setting > scale out (app service plan)
+> section scaling > select automatiquue > max burst > 2 > save
+> diagnose and solve problems > load test your app > create load test
+> select create > name > review + create > go to ressource > overview >
+add hhtp request > select create > aller sur l'onglet test plan > add request
+> field url > domaine prod (url) (https) >  review + create
+
+> stopper le test

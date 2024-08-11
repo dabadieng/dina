@@ -1,0 +1,8 @@
+# Creation d'un aci
+seearch > container instance > create > rg, name, region, image source : Quickstart images, image : dockerfile
+> next networking > networking type : public, DNS name label > name > next avanced > review + create
+
+# tester le deployment de l'aci port 80, utiliser le dns name
+recuperer le fqdn, status : running
+
+> setting > container > logs > get, http, 200
